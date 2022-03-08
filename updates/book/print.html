@@ -156,7 +156,14 @@ using <sup>superscript</sup> and <sub>subscript</sub></li>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="362022"><a class="header" href="#362022">3/6/2022</a></h1>
 <hr />
 <p>I've been working on adding the three individual years together into a single set of plots to compare against the results of training on all three years combined from the beginning (which I refer to as &quot;Run 2&quot;). So far there's two issues. I can't save the counts for the backgrounds/signals in the individual year plots or add them together. There might be a way to work around this and pull the numbers from the legends and add them and then use the sums in a new legend, or loop over each bin in the histogram and add the counts. The latter option might be harder since it's a <span style="color:royalblue">THStack</span> not just a single histogram. The other issue is that the errors on the histogram's don't add because they're not histograms, they're <span style="color:royalblue;">TGraphAymmErrors</span>. I think I'll have to take the final histogram stack that gets saved and use that to create the new AsymmErrors (similar to how I create the errors in the first place).</p>
-<p>The other thing I've been working on is expanding the uncertainties on the histograms.</p>
+<p>The other thing I've been working on is expanding the uncertainties on the histograms. I've been looking at the analysis note and they don't have an overall reported uncertainty. For now I just added an overall systematic uncertainty of 10% in addition to the statistical uncertainties.</p>
+<p>I spent a while debugging this because somehow just adding two lines that set the errors to include that extra 10% broke things. The plots displayed fine while the script was running, but when it saved as a pdf there was issues. Some plots saved just fine, other's were missing their axes or data, and some plots just didn't show up at all. Not sure what that was about, but I mostly fixed it. I had to change the errors histogram from a <span style="color: royalblue">TGraphAsymmErrors</span> to a <span style="color: royalblue">TGraphErrors</span> but it left me with the weird spike's at -1. If I turned the lower plot's errors into a <span style="color: royalblue">TGraphErrors</span> too the spike was like two bins wide. Also not sure what that was about.</p>
+<p>Here's the result with the expanded uncertainty.</p>
+<p><a href="march/./img/2016_test1_20-52.pdf">2016 Plot</a></p>
+<p>Here's the result with the expanded uncertainty and the optimal BDT cut</p>
+<p><a href="march/./img/2016_BDT_cut_5-35.pdf">2016 BDT cut</a></p>
+<p>And the result with the optimal DNN_GPU cut</p>
+<p><a href="march/./img/2016_DNN_cut_5-44.pdf">2016 DNN_GPU cut</a></p>
 
                     </main>
 
