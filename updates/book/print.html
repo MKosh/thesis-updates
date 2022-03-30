@@ -78,7 +78,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="intro.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">March 2022</li><li class="chapter-item expanded "><a href="march/wo_3-6-22.html"><strong aria-hidden="true">1.</strong> 3/6/2022</a></li><li class="chapter-item expanded "><a href="march/wo_3-23-22.html"><strong aria-hidden="true">2.</strong> 3/23/2022</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="intro.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">March 2022</li><li class="chapter-item expanded "><a href="march/wo_3-6-22.html"><strong aria-hidden="true">1.</strong> 3/6/2022</a></li><li class="chapter-item expanded "><a href="march/wo_3-23-22.html"><strong aria-hidden="true">2.</strong> 3/23/2022</a></li><li class="chapter-item expanded "><a href="march/w0_3-30-22.html"><strong aria-hidden="true">3.</strong> 3/30/2022</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -193,6 +193,19 @@ using <sup>superscript</sup> and <sub>subscript</sub></li>
 <p>There's so many combinations of years, types of plots, and cuts. We can hopefully figure out what the important combinations are and what's worth keeping/writing about.</p>
 <h3 id="writing"><a class="header" href="#writing">Writing</a></h3>
 <p>I've done a smidgen of writing, but on my commute home one day the fix for combining the years popped in my head and I've been pretty focused on that. I was working on some more of the background material, but I think it would be easier (based on how easy it is to ramble/write in these updates) to start focusing on writing about everything I've done, and then go back and fill in the background. </p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="3302022"><a class="header" href="#3302022">3/30/2022</a></h1>
+<hr />
+<h1 id="full-run-2-with-year-as-a-variable"><a class="header" href="#full-run-2-with-year-as-a-variable">Full run 2 with 'year' as a variable</a></h1>
+<p>I added the year as a variable and reran the training for the datasets where the data was combined pre-training (maybe I should call that 'pre-combined' and the other set 'post-combined'? that sounds like a better distinction).</p>
+<ul>
+<li>Here are the plots after the optimal cuts</li>
+</ul>
+<table><thead><tr><th>BDT cut</th><th><a href="march/img/3-30-22/Run2_sr_BDT_year_19-16.pdf">Trained in SR</a></th><th><a href="march/img/3-30-22/Run2_wv_boosted_BDT_year_18-10.pdf">Trained in full WV boosted region</a></th></tr></thead><tbody>
+<tr><td><strong>DNN cut</strong></td><td><a href="march/img/3-30-22/Run2_sr_DNN_year_19-18.pdf"><strong>Trained in SR</strong></a></td><td><a href="march/img/3-30-22/Run2_wv_boosted_DNN_year_18-43.pdf"><strong>Trained in full WV boosted region</strong></a></td></tr>
+</tbody></table>
+<ul>
+<li>Compared to the plots from last week ('non-summed' or pre-combined BDT cut plots) There's about 30-40 fewer events, but no major differences. There's closer to 100 more events than in the post-combined (summed) plots from last week. The year was at the bottom of the variable rankings for both sets of training. So it seems like the increased number of training events allowed the model to select more likely-events, and accounting for the year brought the event counts around a third of the way back down.</li>
+</ul>
 
                     </main>
 
